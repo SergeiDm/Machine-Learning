@@ -195,10 +195,7 @@ def process_photo(front_object_ini, background_ini,
 
         # Sharpness correction
         blur = cv2.medianBlur(f_object, 5)
-        #blur = cv2.GaussianBlur(f_object, (7, 7), sigmaX=1.5, sigmaY=1.5, borderType=cv2.BORDER_DEFAULT)
         f_object = cv2.addWeighted(f_object, 2, blur, -1, 0)
-        f_object = cv2.medianBlur(f_object, 3)
-        #f_object = cv2.GaussianBlur(f_object, (7, 7), sigmaX=0, sigmaY=0, borderType=cv2.BORDER_DEFAULT)
 
         # Contrast stretching
         hsv = cv2.cvtColor(f_object, cv2.COLOR_RGB2HSV)
