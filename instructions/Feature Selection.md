@@ -14,5 +14,9 @@ The methods:
 Sklearn has module for feature selection:  
 `from sklearn.feature_selection import SelectFromModel`
 
+Select K best features:
+from sklearn.feature_selection import SelectKBest, chi2
+X_new = SelectKBest(chi2, k=20).fit_transform(X, y)
+
 **References**  
 1. [The 5 Feature Selection Algorithms every Data Scientist should know](https://towardsdatascience.com/the-5-feature-selection-algorithms-every-data-scientist-need-to-know-3a6b566efd2)
